@@ -29,11 +29,7 @@ public class FieldPuyo extends Puyo {
 	 */
 	@Override
 	protected boolean checkPuyo(char color) {
-		if (color == GREEN || color == RED || color == BLUE || color == YELLOW || color == PURPLE || color == NONE || color == OJAMA) {
-			return true;
-		} else {
-			return false;
-		}
+		return (color == GREEN || color == RED || color == BLUE || color == YELLOW || color == PURPLE || color == NONE || color == OJAMA);
 	}
 
 	/**

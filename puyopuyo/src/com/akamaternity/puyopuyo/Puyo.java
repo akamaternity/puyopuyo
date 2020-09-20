@@ -91,6 +91,6 @@ public abstract class Puyo {
 	 * @return true：色ぷよ / false：色ぷよでない
 	 */
 	public boolean isColorPuyo() {
-		return  (this.color == GREEN || this.color == RED || this.color == BLUE || this.color == YELLOW || this.color == PURPLE);
+		return (this.color == GREEN || this.color == RED || this.color == BLUE || this.color == YELLOW || this.color == PURPLE);
 	}
 }
