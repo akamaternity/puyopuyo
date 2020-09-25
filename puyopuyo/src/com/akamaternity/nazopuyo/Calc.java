@@ -110,7 +110,7 @@ public abstract class Calc {
 					calc(fieldCopy, tsumoListCopy, index + 1);
 				} catch (CannotPutTsumoException e) {
 					// 設置できないケース
-					return;
+					continue;
 				}
 			}
 		}

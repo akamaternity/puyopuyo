@@ -399,7 +399,7 @@ public class Field implements Cloneable {
 	/**
 	 * フィールドに指定の色を含むか取得します。
 	 * @param color 色
-	 * @return true: 含む、false: 含まない
+	 * @return true：含む / false：含まない
 	 */
 	public boolean contains(char color) {
 		for (int y = 0; y < Y_SIZE; y++) {
@@ -410,6 +410,21 @@ public class Field implements Cloneable {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * フィールドが全消し状態か取得します。
+	 * @return true：全消し / false：全消しでない
+	 */
+	public boolean isAllClear() {
+		for (int y = 0; y < Y_SIZE; y++) {
+			for (int x = 0; x < X_SIZE; x++) {
+				if (!field[y][x].isNone()) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 }
