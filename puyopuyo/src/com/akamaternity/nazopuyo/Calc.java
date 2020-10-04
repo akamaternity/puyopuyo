@@ -144,14 +144,21 @@ public abstract class Calc {
 	/**
 	 * インスタンスを取得します。
 	 * @param type
-	 * @param ruquire
+	 * @param require
 	 * @return Calcインスタンス
 	 */
-	public static Calc getInstance(String type, String ruquire) {
-		// TODO リテラル定数化
+	public static Calc getInstance(String type, String require) {
 		if ("1".equals(type)) {
-			int chain = Integer.parseInt(ruquire);
+			int chain = Integer.parseInt(require);
 			return new NazoChainCalc(chain);
+		} else if ("2".equals(type)) {
+			return new NazoAllClearCalc();
+		} else if ("3".equals(type)) {
+			char color = require.toCharArray()[0];
+			return new NazoColorAllClearCalc(color);
+		} else if ("4".equals(type)) {
+			int colorNum = Integer.parseInt(require);
+			return new NazoMultiColorCalc(colorNum);
 		} else {
 			return null;
 		}

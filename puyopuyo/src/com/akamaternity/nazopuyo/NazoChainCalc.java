@@ -6,7 +6,7 @@ import com.akamaternity.puyopuyo.Field;
 import com.akamaternity.puyopuyo.Tsumo;
 
 /**
- * 「XX連鎖すべし」
+ * 「XX連鎖するべし」
  * @author akamaternity
  */
 public class NazoChainCalc extends Calc {

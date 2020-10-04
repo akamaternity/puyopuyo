@@ -5,6 +5,10 @@ import java.util.List;
 import com.akamaternity.puyopuyo.Field;
 import com.akamaternity.puyopuyo.Tsumo;
 
+/**
+ * 「ぷよすべて消すべし」
+ * @author akamaternity
+ */
 public class NazoAllClearCalc extends Calc {
 
 	/**
