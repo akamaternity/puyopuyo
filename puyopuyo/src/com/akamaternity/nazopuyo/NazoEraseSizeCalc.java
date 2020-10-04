@@ -6,19 +6,18 @@ import com.akamaternity.puyopuyo.Field;
 import com.akamaternity.puyopuyo.Tsumo;
 
 /**
- * 「XX色同時に消すべし」
+ * 「XX匹同時に消すべし」
  * @author akamaternity
  */
-public class NazoMultiColorCalc extends Calc {
-	private int colorNum;
+public class NazoEraseSizeCalc extends Calc {
+	private int eraseSize;
 
 	/**
 	 * コンストラクタ
-	 * @param colorNum 色数
+	 * @param eraseSize 同時消し数
 	 */
-	public NazoMultiColorCalc(int colorNum) {
-		super();
-		this.colorNum = colorNum;
+	public NazoEraseSizeCalc(int eraseSize) {
+		this.eraseSize = eraseSize;
 	}
 
 	/**
@@ -34,7 +33,7 @@ public class NazoMultiColorCalc extends Calc {
 	 */
 	@Override
 	protected boolean correctCheck(int[] result, Field field) {
-		return result[2] >= colorNum;
+		return result[3] >= eraseSize;
 	}
 
 }

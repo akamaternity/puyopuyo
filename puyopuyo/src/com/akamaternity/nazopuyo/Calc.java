@@ -159,8 +159,11 @@ public abstract class Calc {
 		} else if ("4".equals(type)) {
 			int colorNum = Integer.parseInt(require);
 			return new NazoMultiColorCalc(colorNum);
+		} else if ("5".equals(type)) {
+			int eraseSize = Integer.parseInt(require);
+			return new NazoEraseSizeCalc(eraseSize);
 		} else {
-			return null;
+			throw new IllegalArgumentException();
 		}
 	}
 
