@@ -23,7 +23,6 @@ public class NazoAllClearCalc extends Calc {
 	 */
 	@Override
 	protected boolean impossibleCheck(Field field, List<Tsumo> tsumoList, int index) {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 

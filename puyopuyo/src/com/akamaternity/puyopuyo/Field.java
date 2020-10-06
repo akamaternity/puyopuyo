@@ -427,4 +427,17 @@ public class Field implements Cloneable {
 		return true;
 	}
 
+	/**
+	 * 色ぷよの数を取得します。
+	 * @return 色ぷよの数
+	 */
+	public int getColorPuyoNum() {
+		int num = 0;
+		for (int y = 0; y < Y_SIZE; y++) {
+			for (int x = 0; x < X_SIZE; x++) {
+				if (field[y][x].isColorPuyo()) num++;
+			}
+		}
+		return num;
+	}
 }

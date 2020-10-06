@@ -34,7 +34,6 @@ public class NazoChainCalc extends Calc {
 	 */
 	@Override
 	protected boolean impossibleCheck(Field field, List<Tsumo> tsumoList, int index) {
-		// TODO
 		return false;
 	}
 
