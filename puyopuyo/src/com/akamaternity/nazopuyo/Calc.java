@@ -39,7 +39,6 @@ public abstract class Calc {
 	 * @param field フィールド
 	 * @param tsumoList ツモのリスト
 	 * @return 正答リスト
-	 * @throws Exception
 	 */
 	public List<List<Tsumo>> calc(Field field, List<Tsumo> tsumoList) {
 		calc(field, tsumoList, 0);
@@ -52,7 +51,6 @@ public abstract class Calc {
 	 * @param field フィールド
 	 * @param tsumoList ツモリスト
 	 * @param index ツモリストのインデックス
-	 * @throws Exception
 	 */
 	private void calc(Field field, List<Tsumo> tsumoList, int index) {
 		if (correctListMaxCheck()) {

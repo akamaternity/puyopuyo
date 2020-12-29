@@ -34,8 +34,14 @@ public class Field implements Cloneable {
 	 * @param fieldArray フィールド（char配列）
 	 */
 	public Field(char[][] fieldArray) {
-		if (!(fieldArray.length == Y_SIZE && fieldArray[0].length == X_SIZE)) {
+		if (fieldArray.length != Y_SIZE) {
 			throw new IllegalArgumentException();
+		}
+
+		for (int y = 0; y < Y_SIZE; y++) {
+			if (fieldArray[y].length != X_SIZE) {
+				throw new IllegalArgumentException();
+			}
 		}
 
 		field = new FieldPuyo[Y_SIZE][X_SIZE];

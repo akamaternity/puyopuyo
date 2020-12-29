@@ -102,7 +102,7 @@ public class Tsumo {
 	/**
 	 * ゾロであるか取得します。
 	 *
-	 * @return true: ゾロ、false: ゾロでない
+	 * @return true：ゾロ / false：ゾロでない
 	 */
 	public boolean isZoro() {
 		if (axisPuyo.isSameColor(childPuyo)) {
@@ -150,7 +150,7 @@ public class Tsumo {
 	 * ツモの文字列のフォーマットをチェックします。
 	 *
 	 * @param tsumoList ツモリスト（文字列）
-	 * @return true: OK、false: NG
+	 * @return true：OK / false：NG
 	 */
 	private static boolean checkTsumoList(String tsumoList) {
 		int length = tsumoList.length();
@@ -239,6 +239,10 @@ public class Tsumo {
 		return axisX;
 	}
 
+	/**
+	 * 子ぷよのx座標を取得します。
+	 * @return 子ぷよのx座標
+	 */
 	public int getChildX() {
 		return axisX + childPosition.getChildRelativeX();
 	}

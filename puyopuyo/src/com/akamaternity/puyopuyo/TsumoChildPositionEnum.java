@@ -32,7 +32,7 @@ public enum TsumoChildPositionEnum {
 	/**
 	 * 横置きか取得します。
 	 *
-	 * @return true: 横置き、false: 横置きでない
+	 * @return true：横置き / false：横置きでない
 	 */
 	public boolean isHorizontalSetting() {
 		return (this == CHILD_LEFT || this == CHILD_RIGHT);
@@ -41,7 +41,7 @@ public enum TsumoChildPositionEnum {
 	/**
 	 * 縦置きか取得します。
 	 *
-	 * @return true: 縦置き、false: 縦置きでない
+	 * @return true：縦置き / false：縦置きでない
 	 */
 	public boolean isVerticalSetting() {
 		return !isHorizontalSetting();

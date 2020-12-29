@@ -43,7 +43,7 @@ public class Connect {
 
 	/**
 	 * 消去可能であるか取得します。
-	 * @return true: 消去可能、false: 消去不可
+	 * @return true：消去可能 / false：消去不可
 	 */
 	public boolean isErasable() {
 		return size >= ERASE_CONNECT_SIZE;
