@@ -133,7 +133,7 @@ public abstract class Calc {
 
 	/**
 	 * 正答であるかチェックします。
-	 * @param result [0]得点, [1]連鎖数, [2]最大同時消し色数, [3]最大同時消し数
+	 * @param result [0]得点、[1]連鎖数、[2]最大同時消し色数、[3]最大同時消し数
 	 * @param field フィールド
 	 * @return true：正答 / false：正答でない
 	 */
