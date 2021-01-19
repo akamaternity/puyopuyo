@@ -3,6 +3,7 @@ package com.akamaternity.nazopuyo;
 import java.util.List;
 
 import com.akamaternity.puyopuyo.Field;
+import com.akamaternity.puyopuyo.Puyo;
 import com.akamaternity.puyopuyo.Tsumo;
 
 /**
@@ -15,9 +16,15 @@ public class NazoColorAllClearCalc extends Calc {
 	/**
 	 * コンストラクタ
 	 * @param color 色
+	 * @param maxCorrectSize 計算する正答数の上限
 	 */
-	public NazoColorAllClearCalc(char color) {
-		super();
+	public NazoColorAllClearCalc(char color, int maxCorrectSize) {
+		super(maxCorrectSize);
+
+		if (!Puyo.checkPuyoChar(color)) {
+			throw new IllegalArgumentException("argument is not correct.");
+		}
+
 		this.color = color;
 	}
 

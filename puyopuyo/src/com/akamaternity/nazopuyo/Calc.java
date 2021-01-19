@@ -14,15 +14,17 @@ import com.akamaternity.puyopuyo.TsumoChildPositionEnum;
  */
 public abstract class Calc {
 	/** 正答数の最大、正答数がこの値に達した場合、計算処理を止める */
-	protected static final int MAX_CORRECT_SIZE = 20;
+	private int maxCorrectSize;
 
 	/** 正答リスト */
 	private List<List<Tsumo>> correctList;
 
 	/**
 	 * コンストラクタ
+	 * @param maxCorrectSize 計算する正答数の上限
 	 */
-	public Calc() {
+	public Calc(int maxCorrectSize) {
+		this.maxCorrectSize = maxCorrectSize;
 		correctList = new ArrayList<>();
 	}
 
@@ -76,7 +78,6 @@ public abstract class Calc {
 				}
 				// 軸ぷよx座標 = 5 かつ 子ぷよ位置右はNGなのでスキップ
 				if (x == Field.X_SIZE - 1 && childPos == TsumoChildPositionEnum.CHILD_RIGHT) {
-
 					continue;
 				}
 				try {
@@ -119,7 +120,7 @@ public abstract class Calc {
 	 * @return true：最大値に達している / false：最大値に達していない
 	 */
 	private boolean correctListMaxCheck() {
-		return this.correctList.size() >= MAX_CORRECT_SIZE;
+		return this.correctList.size() >= maxCorrectSize;
 	}
 
 	/**
@@ -145,23 +146,23 @@ public abstract class Calc {
 	 * @param require
 	 * @return Calcインスタンス
 	 */
-	public static Calc getInstance(String type, String require) {
+	public static Calc getInstance(String type, String require, int maxCorrectSize) {
 		if ("1".equals(type)) {
 			int chain = Integer.parseInt(require);
-			return new NazoChainCalc(chain);
+			return new NazoChainCalc(chain, maxCorrectSize);
 		} else if ("2".equals(type)) {
-			return new NazoAllClearCalc();
+			return new NazoAllClearCalc(maxCorrectSize);
 		} else if ("3".equals(type)) {
 			char color = require.toCharArray()[0];
-			return new NazoColorAllClearCalc(color);
+			return new NazoColorAllClearCalc(color, maxCorrectSize);
 		} else if ("4".equals(type)) {
 			int colorNum = Integer.parseInt(require);
-			return new NazoMultiColorCalc(colorNum);
+			return new NazoMultiColorCalc(colorNum, maxCorrectSize);
 		} else if ("5".equals(type)) {
 			int eraseSize = Integer.parseInt(require);
-			return new NazoEraseSizeCalc(eraseSize);
+			return new NazoEraseSizeCalc(eraseSize, maxCorrectSize);
 		} else {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("argument is not correct.");
 		}
 	}
 

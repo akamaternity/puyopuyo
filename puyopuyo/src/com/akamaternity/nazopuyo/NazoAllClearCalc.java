@@ -13,9 +13,10 @@ public class NazoAllClearCalc extends Calc {
 
 	/**
 	 * コンストラクタ
+	 * @param maxCorrectSize 計算する正答数の上限
 	 */
-	public NazoAllClearCalc() {
-		super();
+	public NazoAllClearCalc(int maxCorrectSize) {
+		super(maxCorrectSize);
 	}
 
 	/**

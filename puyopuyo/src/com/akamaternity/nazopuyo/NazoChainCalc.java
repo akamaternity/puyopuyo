@@ -15,9 +15,15 @@ public class NazoChainCalc extends Calc {
 	/**
 	 * コンストラクタ
 	 * @param chain 連鎖数
+	 * @param maxCorrectSize 計算する正答数の上限
 	 */
-	public NazoChainCalc(int chain) {
-		super();
+	public NazoChainCalc(int chain, int maxCorrectSize) {
+		super(maxCorrectSize);
+
+		if (!(chain >= 1 && chain <= 19)) {
+			throw new IllegalArgumentException("argument is not correct.");
+		}
+
 		this.chain = chain;
 	}
 

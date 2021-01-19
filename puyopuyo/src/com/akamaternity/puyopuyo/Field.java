@@ -59,7 +59,7 @@ public class Field implements Cloneable {
 	 */
 	public Field(String fieldStr) {
 		if (fieldStr.length() != (X_SIZE * Y_SIZE)) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("argument is not correct.");
 		}
 
 		field = new FieldPuyo[Y_SIZE][X_SIZE];
@@ -87,7 +87,6 @@ public class Field implements Cloneable {
 
 		// 2. 消去チェックがTRUEの場合、処理を繰り返す
 		while (isErasable()) {
-
 			// 2-1. 消す処理
 			int[] eraseResult = erase(++chain);
 

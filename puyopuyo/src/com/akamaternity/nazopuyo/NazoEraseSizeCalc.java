@@ -15,8 +15,15 @@ public class NazoEraseSizeCalc extends Calc {
 	/**
 	 * コンストラクタ
 	 * @param eraseSize 同時消し数
+	 * @param maxCorrectSize 計算する正答数の上限
 	 */
-	public NazoEraseSizeCalc(int eraseSize) {
+	public NazoEraseSizeCalc(int eraseSize, int maxCorrectSize) {
+		super(maxCorrectSize);
+
+		if (!(eraseSize >= 4 && eraseSize <= 72)) {
+			throw new IllegalArgumentException("argument is not correct.");
+		}
+
 		this.eraseSize = eraseSize;
 	}
 

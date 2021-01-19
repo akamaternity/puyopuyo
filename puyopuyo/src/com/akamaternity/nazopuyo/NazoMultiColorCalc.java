@@ -15,9 +15,15 @@ public class NazoMultiColorCalc extends Calc {
 	/**
 	 * コンストラクタ
 	 * @param colorNum 色数
+	 * @param maxCorrectSize 計算する正答数の上限
 	 */
-	public NazoMultiColorCalc(int colorNum) {
-		super();
+	public NazoMultiColorCalc(int colorNum, int maxCorrectSize) {
+		super(maxCorrectSize);
+
+		if (!(colorNum >= 1 && colorNum <= 5)) {
+			throw new IllegalArgumentException("argument is not correct.");
+		}
+
 		this.colorNum = colorNum;
 	}
 

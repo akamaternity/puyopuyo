@@ -93,4 +93,13 @@ public abstract class Puyo {
 	public boolean isColorPuyo() {
 		return (this.color == GREEN || this.color == RED || this.color == BLUE || this.color == YELLOW || this.color == PURPLE);
 	}
+
+	/**
+	 * 指定の文字（char）がぷよを表す文字かチェックします。
+	 * @param puyoChar ぷよを表す文字
+	 * @return true：ぷよを表す文字 / false：ぷよを表す文字でない
+	 */
+	public static boolean checkPuyoChar(char puyoChar) {
+		return (puyoChar == GREEN || puyoChar == RED || puyoChar == BLUE || puyoChar == YELLOW || puyoChar == PURPLE || puyoChar == NONE || puyoChar == OJAMA);
+	}
 }
