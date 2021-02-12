@@ -1,0 +1,41 @@
+apply plugin : 'java-library'
+apply plugin : 'eclipse'
+apply plugin : 'maven-publish'
+
+// project information
+group = 'com.dontsutsu'
+version = '0.0.1'
+
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile 'junit:junit:4.11'
+}
+
+// UTF-8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+task sourceJar(type: Jar) {
+	from sourceSets.main.allJava
+	classifier 'sources'
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+			artifact sourceJar
+		}
+	}
+	repositories {
+		maven {
+			url 'file:///C:/Users/Fuhito Akamatsu/Documents/program/eclipse_workspace/github_maven'
+		}
+	}
+}
