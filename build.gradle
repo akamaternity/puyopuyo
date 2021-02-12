@@ -35,7 +35,7 @@ publishing {
 	}
 	repositories {
 		maven {
-			url 'file:///C:/Users/Fuhito Akamatsu/Documents/program/eclipse_workspace/github_maven'
+			url GITHUB_MAVEN
 		}
 	}
 }
