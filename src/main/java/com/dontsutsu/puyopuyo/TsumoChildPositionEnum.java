@@ -7,18 +7,24 @@ package com.dontsutsu.puyopuyo;
  *
  */
 public enum TsumoChildPositionEnum {
-	CHILD_TOP(0, 1),		// 子ぷよが上
-	CHILD_BOTTOM(0, -1),	// 子ぷよが下
-	CHILD_LEFT(-1, 0),		// 軸ぷよが左
-	CHILD_RIGHT(1, 0)		// 軸ぷよが右
+	CHILD_TOP("TOP", 0, 1),		// 子ぷよが上
+	CHILD_BOTTOM("BOTTOM", 0, -1),	// 子ぷよが下
+	CHILD_LEFT("LEFT", -1, 0),		// 軸ぷよが左
+	CHILD_RIGHT("RIGHT", 1, 0)		// 軸ぷよが右
 	;
 
+	private final String name;
 	private final int childRelativeX;
 	private final int childRelativeY;
 
-	private TsumoChildPositionEnum(final int childRelativeX, final int childRelativeY) {
+	private TsumoChildPositionEnum(final String name, final int childRelativeX, final int childRelativeY) {
+		this.name = name;
 		this.childRelativeX = childRelativeX;
 		this.childRelativeY = childRelativeY;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	public int getChildRelativeX() {
